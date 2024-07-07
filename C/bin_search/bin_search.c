@@ -1,4 +1,4 @@
-#include<stdlib.h>
+#include<stdlib.h> //modifica
 #include<stdio.h>
 typedef unsigned short int boolean;
 #define true 1
