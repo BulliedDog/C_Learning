@@ -10,6 +10,6 @@ class Character{
         ~Character(){} //no pointers so no dynamic memory, all static memory gets cleaned
         T get_name(){return name;}
         int get_age(){return age;}
-        void set_name(std::string name){this->name=name;}
+        void set_name(T name){this->name=name;}
         void set_age(int age){this->age=age;}
 };
