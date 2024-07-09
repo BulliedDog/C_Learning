@@ -14,13 +14,12 @@ class Prova{
                 fill_vector_bello();
         }
         ~Prova(){}
-        void fill_vector_brutto(){
+        void fill_vector_brutto(){ //parte da 1
             for(int x=0; x<v.size(); x++){
                 v[x]=x+1;
             }
         }
-        void fill_vector_bello(){
-            int x=0;
+        void fill_vector_bello(int x=0){ //parte dal valore dato altrimenti 0
             std::generate(v.begin(),v.end(),[&x]()->int{
                 return x++;
             });
@@ -62,15 +61,24 @@ class Prova{
 int main(){
     //lambda expr//
     /*
-        [campture_list](parameters)->return_type;
+        [capture_list](parameters)->return_type;
     */
     Prova p(10);
-    Prova t(10,1);
+    Prova t(20,1);
     p.print_all();
     t.print_all();
-    auto compare = [](int & x, int & y)->bool{
-        if(x==y) return true;
-        else return false;
+    auto compare = [](int & x, int & y)->bool{ //posso usare auto
+        if(x==y) 
+            return true; 
+        else 
+            return false;
     };
+    int x=2, y=3;
+    if(compare(x, y))
+        std::cout<<"x e y sono uguali!"<<std::endl;
+    else
+        std::cout<<"x e y NON sono uguali!"<<std::endl;
+    p.count_even_numbers();
+    t.count_even_numbers();
     return 0;
 }
