@@ -1,6 +1,7 @@
 #include<iostream>
 #include<fstream> //file stream
 #include<exception>
+#include<memory>
 /**
  * @brief Classe per la 
  */
@@ -8,7 +9,6 @@ class File{
     private:
         std::fstream file;
         std::string filename;
-        int* x;
     public:
         /**
          * @brief Costruttore per la classe file
@@ -17,33 +17,38 @@ class File{
          * @exception Eccezione nel caso in cui il file non venga aperto
          */
         File(std::string name):filename{name}{
-            x=new int(30); ///< variabile a caso
-            file.open(filename); ///< apertura del file
+            file.open(filename, std::ios::in | std::ios::out | std::ios::app); ///< apertura del file sia in scrittura che lettura
             if(!file.is_open())
                 throw std::runtime_error("Errore apertura file"+filename);
             else
-                std::cout<<"File "<<filename<<" aperto con successo!";
+                std::cout<<"File "+filename+" aperto con successo!"<<std::endl;
         }
         /**
          * @brief Distruttore File, si occupa di chiudere il file seguendo l'ideoma RAII essendo
          * l'oggetto istanziato in memoria statica nel main.cpp*/
         ~File(){
-            delete x;
             file.close();
-            if(file.is_open())
-                throw std::runtime_error("Errore nella chiusura del file "+filename);
-            std::cout<<"File "<<filename<<" chiuso con successo!";
+            /*if(file.is_open()) //pericoloso lanciare eccezioni in un distruttore, altrimenti va in std::terminate()
+                throw std::runtime_error("Errore nella chiusura del file "+filename);*/
+            std::cout<<"File "<<filename<<" liberato dalla memoria con successo!"<<std::endl;
         }
         void write(std::string string){
+            if(!file.is_open()){
+                file.open(filename, std::ios::in | std::ios::out | std::ios::app);
+            }
             file<<string<<std::endl;
             std::cout<<"Scrittura avvenuta correttamente"<<std::endl;
+            file.close(); //salva il file nella chiusura
         }
         void read(){
+            if(!file.is_open()){
+                file.open(filename, std::ios::in | std::ios::out | std::ios::app);
+            }
             std::cout<<"Lettura file "<<filename<<std::endl;
             std::cout<<"************************************"<<std::endl;
-            std::string output;
-            file>>output;
-            std::cout<<output<<std::endl;
+            std::string line;
+            while(std::getline(file,line))
+                std::cout<<line<<std::endl;
             std::cout<<"************************************"<<std::endl;
         }
         File(const File& other) = delete;
@@ -55,10 +60,8 @@ int main(){
         guano.read();
         guano.write("Il king è proprio un bel guano");
         guano.read();
-        guano.~File();
-        guano.read();
     }
     catch(std::exception& e){
-        std::cout<<e.what()<<std::endl;
+        std::cerr<<e.what()<<std::endl;
     }
 }
