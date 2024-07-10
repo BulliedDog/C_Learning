@@ -16,7 +16,7 @@ void Plane::what(){
     std::cout<<"Name: "<<name<<std::endl;
     std::cout<<"Model: "<<model<<std::endl;
     std::cout<<"Wings: "<<wings<<std::endl;
-    std::cout<<"Propelles: "<<propellers<<std::endl;
+    std::cout<<"Propellers: "<<propellers<<std::endl;
     std::cout<<"*******************************************"<<std::endl<<std::endl;
 
 }
