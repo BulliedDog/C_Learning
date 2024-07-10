@@ -12,7 +12,7 @@ Plane::~Plane(){
 }
 void Plane::what(){
     std::cout<<"*******************************************"<<std::endl;
-    std::cout<<"Plane: "<<std::endl;
+    std::cout<<"Plane"<<std::endl;
     std::cout<<"Name: "<<name<<std::endl;
     std::cout<<"Model: "<<model<<std::endl;
     std::cout<<"Wings: "<<wings<<std::endl;
