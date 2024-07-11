@@ -12,11 +12,12 @@ Shape::~Shape(){
 
 }
 void Shape::resize(int percentage){
+    this->surface+=(this->surface/100*percentage);
     //code code code
 }
 unsigned int Shape::get_surface() const{
     return this->surface;
 }
-void Shape::set_surface(unsigned int percentage){
-    this->surface+=(this->surface/100*percentage);
+void Shape::set_surface(unsigned int surface){
+    this->surface=surface;
 }
