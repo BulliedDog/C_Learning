@@ -14,7 +14,7 @@ class Shape{
         Shape(const Shape& other);
         virtual ~Shape();
         ///@brief Questo è il metodo che sarà riscritto da Text_To_Shape_Adapter per adattare Text a Shape
-        virtual void resize(int percent);
+        virtual void resize(int percentage);
         virtual void what_am_i();
         //G&S//
         unsigned int get_surface() const;
