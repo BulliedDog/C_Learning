@@ -2,7 +2,7 @@
 #include"Shape.h"
 #include<iostream>
 #include<string>
-Shape::Shape(std::string name,int angles,unsigned int surface):name{name},angles{angles},surface{surface}{
+Shape::Shape(std::string name,unsigned int angles,unsigned int surface):name{name},angles{angles},surface{surface}{
 
 }
 Shape::Shape(const Shape& other):name{other.name},angles{other.angles},surface{other.surface}{
@@ -20,4 +20,7 @@ unsigned int Shape::get_surface() const{
 }
 void Shape::set_surface(unsigned int surface){
     this->surface=surface;
+}
+void Shape::what_am_i(){
+    std::cout<<"I am a generic Shape!"<<std::endl;
 }

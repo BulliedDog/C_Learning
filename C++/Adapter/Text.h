@@ -10,7 +10,7 @@ class Text{
         unsigned int size;
         std::string font_type;
     public:
-        explicit Text(std::string text="Text",unsigned int size,std::string font_type="Calibri");
+        explicit Text(std::string text="Text",unsigned int size=10,std::string font_type="Calibri");
         Text(Text& other);
         ~Text();
         void print();
