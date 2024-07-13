@@ -59,6 +59,13 @@ int main(){
         for(auto& pair:map)
             std::cout<<"["<<pair.first<<"]["<<pair.second->get_name()<<","<<pair.second->get_age()<<"]"<<std::endl;
     }
+    //libero la memoria
+    std::cout<<"Pulizia della memoria, cancellazione dati puntati dai Character*..."<<std::endl;
+    for(auto& map:lista){
+        for(auto& pair:map)
+            delete pair.second;
+    }
+    std::cout<<"Pulizia effettuata con successo!";
     return 0;
     //Git is op
 }
