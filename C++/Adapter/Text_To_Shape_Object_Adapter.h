@@ -16,7 +16,7 @@ class Text_To_Shape_Object_Adapter:public Shape{ //eredita soltanto shape così 
         std::unique_ptr<Text> text;
     public:
         Text_To_Shape_Object_Adapter(Text& text);
-        Text_To_Shape_Object_Adapter(std::string text="Text Object Adapter",unsigned int size=10,std::string font_type="Calibri");
+        Text_To_Shape_Object_Adapter(std::string text="Text Object Adapter",double size=10,std::string font_type="Calibri");
         ~Text_To_Shape_Object_Adapter();
         void resize(int percentage) override;
         void what_am_i() override;

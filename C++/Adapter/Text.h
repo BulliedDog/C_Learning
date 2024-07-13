@@ -7,10 +7,10 @@
 class Text{
     private:
         std::string text;
-        unsigned int size;
+        double size;
         std::string font_type;
     public:
-        explicit Text(std::string text="Text",unsigned int size=10,std::string font_type="Calibri");
+        explicit Text(std::string text="Text",double size=10,std::string font_type="Calibri");
         Text(Text& other);
         virtual ~Text();
         virtual void print();
@@ -19,8 +19,8 @@ class Text{
         //G&S//
         std::string get_text();
         void set_text(std::string text);
-        unsigned int get_size();
-        void set_size(unsigned int size);
+        double get_size();
+        void set_size(double size);
         std::string get_font_type();
         void set_font_type(std::string font_type);
 };

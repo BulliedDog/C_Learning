@@ -8,15 +8,19 @@ class Shape{
     private:
         std::string name;
         unsigned int angles;
-        unsigned int surface;
+        double surface;
     public:
-        explicit Shape(std::string name="Shape",unsigned int angles=3,unsigned int surface=3);
+        explicit Shape(std::string name="Shape",unsigned int angles=3,double surface=3);
         Shape(const Shape& other);
         virtual ~Shape();
         ///@brief Questo è il metodo che sarà riscritto da Text_To_Shape_Adapter per adattare Text a Shape
         virtual void resize(int percentage);
         virtual void what_am_i();
         //G&S//
-        unsigned int get_surface() const;
-        void set_surface(unsigned int surface);
+        double get_surface() const;
+        void set_surface(double surface);
+        std::string get_name() const;
+        void set_name(std::string name);
+        unsigned int get_angles() const;
+        void set_angles(unsigned int angles);
 };

@@ -7,7 +7,7 @@
 Text_To_Shape_Adapter::Text_To_Shape_Adapter(Text& text):Text{text.get_text(),text.get_size(),text.get_font_type()}{
 
 }
-Text_To_Shape_Adapter::Text_To_Shape_Adapter(std::string text,unsigned int size,std::string font_type):Text{text,size,font_type}{
+Text_To_Shape_Adapter::Text_To_Shape_Adapter(std::string text,double size,std::string font_type):Text{text,size,font_type}{
 
 }
 Text_To_Shape_Adapter::~Text_To_Shape_Adapter(){
@@ -16,7 +16,7 @@ Text_To_Shape_Adapter::~Text_To_Shape_Adapter(){
 /// @brief Questo è il metodo virtual Shape::resize() che emula Text::change_size(), ovviamente size viene modifica nell'oggetto
 /// Text_To_Shape_Adapter
 void Text_To_Shape_Adapter::resize(int percentage){
-    change_size(percentage);
+    Text::change_size(percentage);
     //code code code
 }
 void Text_To_Shape_Adapter::what_am_i(){

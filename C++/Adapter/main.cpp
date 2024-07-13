@@ -29,17 +29,16 @@ int main(){
     vector.insert(vector.begin(),std::move(object_adapted_text));
     std::cout<<"Prima iterazione con iteratori puntatori"<<std::endl;
     for(std::vector<std::unique_ptr<Shape>>::iterator it=vector.begin();it!=vector.end();it++){
-        (*it)->resize(20);
         (*it)->what_am_i();
     }
     std::cout<<std::endl<<"Seconda iterazione con iteratori puntatori ma con auto per la tipizzazione"<<std::endl;
     for(auto it=vector.begin();it!=vector.end();it++){
-        (*it)->resize(-20);
+        (*it)->resize(20);
         (*it)->what_am_i();
     }
     std::cout<<std::endl<<"Terza iterazione con uso del range_for (c++11) sempre con auto ma a riferimento, questo restituisce un oggetto del vector e non un puntatore!"<<std::endl;
     for(auto& it:vector){
-        it->resize(20);
+        it->resize(-20);
         it->what_am_i();
     }
     return 0;
