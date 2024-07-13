@@ -16,8 +16,8 @@ class Text_To_Shape_Adapter:public Shape::Shape,private Text::Text{
     //non ha membri private se non quelli ereditati da Text
     public:
         explicit Text_To_Shape_Adapter(Text& text);
-        explicit Text_To_Shape_Adapter(std::string text="Text",unsigned int size=10,std::string font_type="Calibri");
-        virtual ~Text_To_Shape_Adapter();
+        explicit Text_To_Shape_Adapter(std::string text="Text Class Adapter",unsigned int size=10,std::string font_type="Calibri");
+        ~Text_To_Shape_Adapter();
         void resize(int percentage) override;
         void what_am_i() override;
 };

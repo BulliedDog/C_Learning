@@ -8,11 +8,8 @@ Text::Text(std::string text,unsigned int size,std::string font_type):text{text},
 Text::Text(Text& other):text{other.text},size{other.size},font_type{other.font_type}{
 
 }
-Text::~Text(){
+Text::~Text(){ //serve definire il distruttore a prescindere perché virtuale
 
-}
-void Text::print(){
-    std::cout<<text<<std::endl;
 }
 /// @brief metodo special_request() dell'uml. La funzione è la stessa di virtual Shape::resize() ma avendo nomi diversi
 /// non può essere chiamata dai std::unique_ptr<Shape> a classe base poichè il metodo dell'adaptee è Text::change_size()
@@ -38,4 +35,7 @@ std::string Text::get_font_type(){
 }
 void Text::set_font_type(std::string font_type){
     this->font_type=font_type;
+}
+void Text::print(){
+    std::cout<<"["<<this->text<<"]["<<this->size<<"]["<<this->font_type<<"]"<<std::endl;
 }

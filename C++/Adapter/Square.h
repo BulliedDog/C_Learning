@@ -6,8 +6,9 @@ class Square : public Shape{
         
     public:
         explicit Square(std::string name="Square", unsigned int angles=4, unsigned int surface=4);
-        explicit Square(Square& other)=delete;//non voglio il costruttore per copia
+        explicit Square(Square& other)=delete; //non voglio il costruttore per copia
         ~Square();
         //void resize() va bene perché è uno shape quindi eredita il metodo senza doverlo sovrascrivere
         void what_am_i() override;
+        void resize(int percentage) override;
 };
