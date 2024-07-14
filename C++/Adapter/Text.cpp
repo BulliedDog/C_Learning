@@ -3,7 +3,7 @@
 #include<iostream>
 #include<string>
 Text::Text(std::string text,double size,std::string font_type):text{text},size{size},font_type{font_type}{
-
+    
 }
 Text::Text(Text& other):text{other.text},size{other.size},font_type{other.font_type}{
 
