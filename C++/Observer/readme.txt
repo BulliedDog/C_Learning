@@ -1,0 +1,1 @@
+Ci sono due tipi di Observer Design Patterns, Pull e Push.
