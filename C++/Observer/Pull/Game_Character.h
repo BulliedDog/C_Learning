@@ -8,11 +8,13 @@ class Game_Character:public Subject{
         int posx,posy;
         std::list<Observer*> observers;
     public:
-        Game_Character(int x=0,int y=0);
-        Game_Character(Game_Character& other);
+        explicit Game_Character(int x=0,int y=0);
+        explicit Game_Character(Game_Character& other);
         ~Game_Character();
         void subscribe(Observer* o) override;
         void unsubscribe(Observer* o) override;
         void notify() override;
         void move(int x, int y);
-}
+        int get_posx();
+        int get_posy();
+};

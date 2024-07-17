@@ -15,7 +15,7 @@ void Game_Character::subscribe(Observer* o){
     this->observers.push_back(o);
 }
 void Game_Character::unsubscribe(Observer* o){
-    this->observers.push_back(o);
+    this->observers.remove(o);
 }
 void Game_Character::notify(){
     for(auto observer:observers)
@@ -26,3 +26,5 @@ void Game_Character::move(int x, int y){
     this->posy=y;
     this->notify();
 }
+int Game_Character::get_posx(){return posx;}
+int Game_Character::get_posy(){return posy;}
