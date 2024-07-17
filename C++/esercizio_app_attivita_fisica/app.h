@@ -27,15 +27,14 @@ class App{
             this->totale_ore_in_piedi+=ore_in_piedi;
         }
         void stampa_attivita(){
-            for(auto att:attivita){
-                std::cout<<att->get_nome()<<", ";
-            }
-            std::cout<<std::endl;
+            for(auto att:attivita)
+                std::cout<<att->get_nome()<<" ["<<att->get_durata()<<"h]["<<att->get_calorie()<<" calorie]"<<std::endl;
         }
         void print(){
             std::cout<<"Stato attuale:"<<std::endl;
             std::cout<<"Ore in piedi: "<<this->totale_ore_in_piedi<<std::endl;
             std::cout<<"Calorie: "<<this->totale_calorie<<std::endl;
-            //this->stampa_attivita();
+            std::cout<<"Lista attivita': "<<std::endl;
+            this->stampa_attivita();
         }
 };
