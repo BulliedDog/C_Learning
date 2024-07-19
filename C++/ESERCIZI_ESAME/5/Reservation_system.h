@@ -20,7 +20,8 @@ class Reservation_system{
                 if(ristorante->get_nome()==nome_ristorante){
                     for(auto tavolo:ristorante->get_tavoli()){
                         if(tavolo.first==numero_tavolo){
-                            ristorante->get_prenotazioni().push_back(std::make_unique<Reservation>(costumer,tavolo.second->get_numero(),giorno,mese,anno,ora,minuto,ospiti));
+                            if(giorno>0&&giorno<=31&&mese>0&&mese<=12&&anno>0&&ora>=0&&ora<24&&minuto>=0&&minuto<60)
+                                ristorante->get_prenotazioni().push_back(std::make_unique<Reservation>(costumer,tavolo.second->get_numero(),giorno,mese,anno,ora,minuto,ospiti));
                         }
                     }
                 }
