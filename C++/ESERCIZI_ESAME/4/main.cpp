@@ -24,4 +24,6 @@ int main(){
     for(auto it=lista_file_system.begin();it!=lista_file_system.end();it++){
         (*it)->print();
     }
+    //Directory cartella("ciao");
+    //(*lista_file_system.begin())->add_directory(cartella);
 }

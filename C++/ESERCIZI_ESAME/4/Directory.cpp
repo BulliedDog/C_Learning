@@ -14,6 +14,9 @@ Directory::Directory(std::string nome):nome{nome}{
 Directory::~Directory(){
 
 }
+Directory::Directory(const Directory& other):nome(other.nome){
+
+}
 void Directory::add_file(File& file){
     this->files.push_back(std::make_unique<File>(file));
 }

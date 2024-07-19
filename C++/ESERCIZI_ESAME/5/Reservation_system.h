@@ -41,16 +41,15 @@ class Reservation_system{
                     for(auto& tavolo:ristorante->get_tavoli()){
                         if(tavolo.second->get_capacità()>=ospiti){
                             for(auto& prenotazione:ristorante->get_prenotazioni()){
-                                if(prenotazione->get_table()==tavolo.second->get_numero()&&prenotazione->get_anno()==anno&&prenotazione->get_mese()==mese&&prenotazione->get_giorno()==giorno&&prenotazione->get_ora()==ora&&prenotazione->get_minuto()==minuto){
+                                if(prenotazione->get_table()==tavolo.second->get_numero()&&prenotazione->get_anno()==anno&&prenotazione->get_mese()==mese&&prenotazione->get_giorno()==giorno&&prenotazione->get_ora()==ora&&prenotazione->get_minuto()==minuto)
                                     return false;
-                                }
-                                else
-                                    return true;
                             }
+                            return true;
                         }
                     }
                 }
             }
+            return false;;
         }
         void add_table(std::string nome_ristorante,int numero,int capacità){
             for(auto& ristorante:ristoranti){

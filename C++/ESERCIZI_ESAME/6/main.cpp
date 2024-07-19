@@ -22,7 +22,6 @@ public:
     }
 };
 
-// Implementazione per GZIP
 class GzipCompressor : public Compressor {
 public:
     std::string compress(const std::string& data) override {
@@ -33,7 +32,6 @@ public:
     }
 };
 
-// Implementazione per RAR
 class RarCompressor : public Compressor {
 public:
     std::string compress(const std::string& data) override {
@@ -58,7 +56,6 @@ private:
     std::map<std::string, std::unique_ptr<Compressor>> compressors; //uso un map di oggetti a classe Base Compressor con associate la stringa di estensione relativa
 public:
     CompressionManager() {
-        // Registra i compressori per estensione
         compressors["txt"] = std::make_unique<ZipCompressor>();
         compressors["docx"] = std::make_unique<GzipCompressor>();
         compressors["xls"] = std::make_unique<RarCompressor>();

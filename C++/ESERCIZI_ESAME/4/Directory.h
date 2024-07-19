@@ -11,6 +11,7 @@ class Directory:public File{
     public:
         Directory();
         Directory(std::string nome);
+        Directory(const Directory& other);
         virtual ~Directory();
         virtual void add_file(File& file);
         virtual void remove_file(File& file);

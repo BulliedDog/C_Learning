@@ -13,7 +13,11 @@ int main(){
     system.add_restaurant("Da Pippo","Via roma");
     system.add_restaurant("Da Rodolfo","Via boh");
     system.add_table("Da Pippo",1,20);
+    if(system.check_table("Da Pippo",1,1,1,1,1,1)==true)
+        std::cout<<"Tavolo disponibile!"<<std::endl;
     Costumer pippo("Pippo","3333333");
     system.add_reservation("Da Pippo",pippo,1,1,1,1,1,1,1);
+    if(system.check_table("Da Pippo",1,1,1,1,1,1)==false)
+        std::cout<<"Tavolo non disponibile o prenotato!"<<std::endl;
     system.print_restaurants();
 }
