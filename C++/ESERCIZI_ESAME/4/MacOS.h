@@ -23,4 +23,5 @@ class MacOS:public Permission,public Directory,public File_system{
         void print() override{
             std::cout<<"I am "<<this->get_type()<<std::endl;
         }
+        std::list<std::unique_ptr<Directory>>& get_directories(){return directories;}
 };

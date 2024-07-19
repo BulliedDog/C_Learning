@@ -5,7 +5,5 @@
 #include"MacOS.h"
 class Abstract_file_system_factory{
     public:
-        virtual std::unique_ptr<Windows> create_windows()=0;
-        virtual std::unique_ptr<Unix> create_unix()=0;
-        virtual std::unique_ptr<MacOS> create_macos()=0;
+        virtual std::unique_ptr<File_system> create_file_system()=0;
 };

@@ -35,7 +35,7 @@ class Reservation_system{
                 }
             }
         }
-        bool check_table(std::string nome_ristorante,int ospiti,int anno,int mese,int giorno,int ora,int minuto){
+        bool check_table(std::string nome_ristorante,int ospiti,int giorno,int mese,int anno,int ora,int minuto){
             for(auto& ristorante:ristoranti){
                 if(ristorante->get_nome()==nome_ristorante){
                     for(auto& tavolo:ristorante->get_tavoli()){
