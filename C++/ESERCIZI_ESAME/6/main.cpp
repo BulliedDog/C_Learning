@@ -55,7 +55,7 @@ class CompressionManager {
 private:
     std::map<std::string, std::unique_ptr<Compressor>> compressors; //uso un map di oggetti a classe Base Compressor con associate la stringa di estensione relativa
 public:
-    CompressionManager() {
+    CompressionManager() { //costruttore inizializzo compressors
         compressors["txt"] = std::make_unique<ZipCompressor>();
         compressors["docx"] = std::make_unique<GzipCompressor>();
         compressors["xls"] = std::make_unique<RarCompressor>();
