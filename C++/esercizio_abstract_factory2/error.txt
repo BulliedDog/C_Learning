@@ -1,0 +1,4 @@
+std_abs.h(136, 3): __float128 is not supported on this target
+std_abs.h(137, 7): __float128 is not supported on this target
+stl_algobase.h(1079, 21): __float128 is not supported on this target
+type_traits(514, 39): __float128 is not supported on this target
