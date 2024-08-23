@@ -26,4 +26,11 @@ class C_subject:public Subject{
             this->name=name;
             this->notify(); //importante quando si tratta di avvertire gli observers ad ogni modifica!
         }
+        void print() const{
+            std::cout<<"Subject name->"<<this->name<<std::endl;
+        }
+        void print_observers() const{
+            for(auto& o:observers)
+                o->print();
+        }
 };
