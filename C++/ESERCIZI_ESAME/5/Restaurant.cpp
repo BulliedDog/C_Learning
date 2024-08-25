@@ -26,6 +26,6 @@ void Restaurant::set_indirizzo(const std::string& indirizzo) {
 std::list<std::unique_ptr<Reservation>>& Restaurant::get_prenotazioni(){
     return prenotazioni;
 }
-const std::map<int, std::shared_ptr<Table>>& Restaurant::get_tavoli() const {
+const std::map<int, std::unique_ptr<Table>>& Restaurant::get_tavoli() const {
     return tavoli;
 }
