@@ -8,6 +8,7 @@
 #include"character.h"
 #include"abstract_factory.h"
 int main(){
+    //(1+1)?std::cout<<"true":std::cout<<"false";
     std::list<std::unique_ptr<Character>> characters;
     Human_factory hf;
     Alien_factory af;
